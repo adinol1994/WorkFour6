@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.workfour.Note" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/note_list_item_bg"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="34dp"
+            android:text="ITEMS COMPANY"
+            app:layout_constraintBottom_toBottomOf="@+id/noteName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/noteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{note.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/noteFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="17dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24"
+            app:layout_editor_absoluteY="22dp"/>
+
+        <TextView
+            android:id="@+id/notePrice"
+            android:layout_width="4dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="6dp"
+            android:text="@{String.valueOf(note.price)}"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp"
+            android:text="Price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="206dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="73dp"
+            android:layout_marginEnd="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/noteFavorite"
+            app:layout_constraintStart_toStartOf="@+id/noteName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
